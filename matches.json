@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "team1": "Barcelona",
+    "team2": "Real Madrid",
+    "score": "2 - 1",
+    "date": "2025-06-06",
+    "status": "Finished"
+  },
+  {
+    "id": 2,
+    "team1": "Man City",
+    "team2": "Bayern",
+    "score": "1 - 1",
+    "date": "2025-06-06",
+    "status": "Live"
+  }
+]
