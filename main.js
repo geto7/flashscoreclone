@@ -27,12 +27,12 @@ function displayMatches(matches) {
     });
 }
 
-// ძებნა input-ზე (live)
+
 document.getElementById("search").addEventListener("input", function() {
     searchMatches();
 });
 
-// ძებნა ღილაკზე
+
 document.getElementById("searchBtn").addEventListener("click", function() {
     searchMatches();
 });
