@@ -1,28 +1,22 @@
-const params = new URLSearchParams(window.location.search);
-const matchId = parseInt(params.get('id'));
+const match = JSON.parse(localStorage.getItem('selectedMatch'));
 
-fetch("matches.json")
-.then(res => res.json())
-.then(matches => {
-    const match = matches.find(m => m.id === matchId);
-    if (match) {
-        displayMatchDetails(match);
-    } else {
-        document.body.innerHTML = "<p>მატჩი ვერ მოიძებნა</p>";
-    }
-})
-.catch(error => {
-    console.error("მატჩის დეტალები ვერ ჩაიტვირთა", error);
-    document.body.innerHTML = "<p>მატჩის დეტალები ვერ ჩაიტვირთა</p>";
-});
-function displayMatchDetails(match) {
-    const container = document.getElementById("match-Details");
+const container = document.getElementById('match-Details');
 
+if (match) {
     container.innerHTML = `
-        <h1>${match.team1} vs ${match.team2}</h1>
-        <p>Score: ${match.score}</p>
-        <p>Date: ${match.date}</p>
-        <p>Status: ${match.status}</p>
-        <a href="index.html"> ⬅️ უკან დაბრუნება</a>
+        <h2>${match.match_hometeam_name} vs ${match.match_awayteam_name}</h2>
+        <p>Score: ${match.match_hometeam_score} - ${match.match_awayteam_score}</p>
+        <p>Date: ${match.match_date}</p>
+        <p>Status: ${match.match_status}</p>
+        <p>Stadium: ${match.match_stadium || 'უცნობია'}</p>
+        <p>Referee: ${match.match_referee || 'უცნობია'}</p>
+        <p>League: ${match.league_name || 'უცნობია'}</p>
+        <p>Round: ${match.match_round || 'უცნობია'}</p>
+        <p>Country: ${match.country_name || 'უცნობია'}</p>
+        <p>Home Team Formation: ${match.match_hometeam_system || 'უცნობია'}</p>
+        <p>Away Team Formation: ${match.match_awayteam_system || 'უცნობია'}</p>
+        <!-- დაამატე სხვა დეტალები სურვილის მიხედვით -->
     `;
+} else {
+    container.innerHTML = "<p>მატჩის დეტალები ვერ მოიძებნა.</p>";
 }

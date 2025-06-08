@@ -4,11 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #1976d2;
+            margin-top: 32px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        #search, #searchBtn {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            margin: 8px 2px 24px 2px;
+        }
+        #search {
+            width: 220px;
+        }
+        #searchBtn {
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+        #searchBtn:hover {
+            background-color: #155a8a;
+        }
+        #matches {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .match {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 20px;
+            border-bottom: none;
+        }
+        .match h2 {
+            margin: 0 0 8px 0;
+            color: #333;
+            font-size: 20px;
+        }
+        .match p {
+            margin: 0;
+            color: #444;
+        }
+        .details-btn {
+            margin-top: 10px;
+            align-self: flex-end;
+            padding: 8px 18px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .details-btn:hover {
+            background: #218838;
+        }
+
+    </style>
 </head>
 <body>
     <h1>თამაშების სია</h1>
-    <input type="text" id="search" placeholder="ძებნა გუნდის სახელით..." />
-    <button id="searchBtn">ძებნა</button>
+   <div class="search-bar">
+        <input type="text" id="search" placeholder="ძებნა გუნდის სახელით..." />
+        <button id="searchBtn">ძებნა</button>
+    </div>
     <div id="matches"></div>
     <script src="main.js"></script>
    

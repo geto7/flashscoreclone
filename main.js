@@ -21,9 +21,19 @@ function displayMatches(matches) {
             <p>score: ${match.match_hometeam_score} - ${match.match_awayteam_score}</p>
             <p>date: ${match.match_date}</p>
             <p>status: ${match.match_status}</p>
+            <button class="details-btn" data-id="${match.match_id}">დეტალები</button>
         `;
 
         container.appendChild(matchElement);
+});
+
+document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const matchId = this.getAttribute('data-id');
+            const match = allMatches.find(m => m.match_id == matchId);
+            localStorage.setItem('selectedMatch', JSON.stringify(match));
+            window.location.href = 'match.html';
+        });
     });
 }
 
