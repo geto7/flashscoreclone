@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
-    // წაშალე წინა შეცდომის შეტყობინება თუ არსებობს
+    
     let errorDiv = document.getElementById('login-error');
     if (!errorDiv) {
         errorDiv = document.createElement('div');
