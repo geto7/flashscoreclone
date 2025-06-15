@@ -22,7 +22,7 @@
             align-items: center;
             margin-bottom: 24px;
         }
-        #search, #searchBtn {
+        #search, #searchBtn, #dateFrom, #dateTo {
             font-size: 16px;
             padding: 10px;
             border-radius: 4px;
@@ -31,6 +31,9 @@
         }
         #search {
             width: 220px;
+        }
+        #dateFrom, #dateTo {
+            width: 150px;
         }
         #searchBtn {
             background-color: #1976d2;
@@ -82,17 +85,17 @@
         .details-btn:hover {
             background: #218838;
         }
-
     </style>
 </head>
 <body>
     <h1>თამაშების სია</h1>
-   <div class="search-bar">
+    <div class="search-bar">
         <input type="text" id="search" placeholder="ძებნა გუნდის სახელით..." />
+        <input type="date" id="dateFrom" />
+        <input type="date" id="dateTo" />
         <button id="searchBtn">ძებნა</button>
     </div>
     <div id="matches"></div>
-    <script src="main.js"></script>
-   
+    <script type="module" src="main.js"></script>
 </body>
 </html>
